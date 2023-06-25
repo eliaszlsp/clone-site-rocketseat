@@ -1,12 +1,11 @@
 import Header from "./components/header";
+import Main from "./components/main";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Header />
-      <main className="bg-black text-fuchsia-50 text-7xl">
-        <h1>oi</h1>
-      </main>
-    </div>
+      <Main />{" "}
+    </>
   );
 }
