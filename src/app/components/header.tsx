@@ -48,7 +48,7 @@ export default function Header(): any {
               <a href="">A Rocketseat</a>
             </li>
             <li>
-              <a href="">para empresas</a>
+              <a href="">Para empresas</a>
             </li>
           </ul>
         </div>
