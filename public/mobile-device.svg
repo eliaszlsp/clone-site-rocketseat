@@ -1,0 +1,16 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22.4 29.7798L23.18 35.9998M16.18 29.7798L15.4 35.9998M13.28 35.9999H25.28" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M35.5 37.5H38.5" stroke="white" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M22.4 29.7799L23.18 35.9999M16.18 29.7799L15.4 35.9999M13.28 36H25.28M30 29.778H8.368C5.956 29.778 4 27.822 4 25.41V10.368C4 7.956 5.956 6 8.368 6H29.634C32.044 6 34 7.956 34 10.368V20" stroke="url(#paint0_linear_8592_32138)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M34 20H40C42.21 20 44 21.79 44 24V38C44 40.21 42.21 42 40 42H34C31.79 42 30 40.21 30 38V24C30 21.79 31.79 20 34 20Z" stroke="url(#paint1_linear_8592_32138)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="paint0_linear_8592_32138" x1="19" y1="6" x2="19" y2="29.778" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8257E5"/>
+      <stop offset="1" stop-color="#2B2146"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_8592_32138" x1="43.9825" y1="41.7331" x2="43.9825" y2="20.0274" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#04D361" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#04D361"/>
+    </linearGradient>
+  </defs>
+</svg>

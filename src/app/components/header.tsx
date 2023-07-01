@@ -7,9 +7,9 @@ const roboto = Roboto({
 });
 export default function Header(): any {
   return (
-    <div className="flex  h-[5.125rem] border-b border-[#29292e] bg-[#121214] flex-row  justify-center  min-w-max  ">
-      <header className="max-w-[90rem] w-full flex flex-row  justify-between items-center   px-6 ">
-        <div className="min-w-[13.125rem]  min-h-[2.625rem]  ">
+    <div className="flex  	fixed w-full z-10 h-[82px] border-b border-[#29292e] bg-[#121214] flex-row  justify-center  min-w-max  ">
+      <header className="max-w-[1440px] w-full flex flex-row  justify-between items-center   px-6 ">
+        <div className="min-w-[210px]  min-h-[42px]  ">
           <Image src="/logo.svg" width={210} height={42} alt="logo" />
         </div>
         <div>
@@ -19,7 +19,7 @@ export default function Header(): any {
             <li>
               <a href="">Home</a>
             </li>
-            <li className="flex flex-row items-center gap-x-[5px] justify-center">
+            <li className="flex flex-row items-center gap-x-[.3125rem] justify-center">
               <p>Programas</p>
               <span>
                 <Image
@@ -30,7 +30,7 @@ export default function Header(): any {
                 />
               </span>
             </li>
-            <li className="flex flex-row items-center gap-x-[5px] justify-center">
+            <li className="flex flex-row items-center gap-x-[.3125rem] justify-center">
               <p>Eventos</p>
               <span>
                 <Image
@@ -69,7 +69,7 @@ export default function Header(): any {
               <a href="">Entrar</a>
             </div>
 
-            <button className="border flex justify-center items-center w-[7.4344rem] h-9 rounded-[.3125rem] border-[#8257E5]">
+            <button className="border flex justify-center items-center w-[118.9504px] h-9 rounded-[5px] border-[#8257E5]">
               <a href="" className="uppercase block  ">
                 criar conta{" "}
               </a>

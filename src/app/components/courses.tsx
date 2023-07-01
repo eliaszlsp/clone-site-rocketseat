@@ -1,62 +1,62 @@
 import { Roboto } from "next/font/google";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import {
+  LegacyRef,
+  MutableRefObject,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 const roboto = Roboto({
   weight: ["700", "400"],
   subsets: ["latin"],
 });
 
 export default function CoursesHtml() {
-  const [positionX, setPositionX] = useState(0);
-  const [positionWidth, setPositionWidth] = useState(0);
-  const explorerRef = useRef();
-  const igniteRef = useRef();
+  const [positionX, setPositionX] = useState<number>(0);
+  const [positionWidth, setPositionWidth] = useState<number>(0);
+  const explorerRef = useRef<any>();
+  const igniteRef = useRef<any>();
+  const discoverRef = useRef<any>();
+  const [brightness, setBrightness] = useState(discoverRef);
+
+  function position(button: any) {
+    setPositionX(button.current.offsetLeft);
+    setPositionWidth(button.current.offsetWidth);
+    setBrightness(button);
+  }
+
   useEffect(() => {
-    setPositionX(explorerRef.current.getBoundingClientRect().left + 22);
-    setPositionWidth(igniteRef.current.offsetWidth + 16);
-    console.log(igniteRef.current.getBoundingClientRect());
+    setPositionWidth(discoverRef.current?.offsetWidth as number);
+    console.log(discoverRef.current);
   }, []);
-  /* const [discover, setDiscover] = useState<boolean>(true);
-  const [explorer, setExplorer] = useState<boolean>(false);
-  const [ignite, setIgnite] = useState<boolean>(false); */
+
   const [courses, setCourses] = useState<string>("discover");
 
   const handleClick = (course: string): void => {
     setCourses(course);
   };
 
-  /*  const handleClickOne = (): void => {
-    setDiscover(true);
-    setExplorer(false);
-    setIgnite(false);
-  };
-  const handleClickTwo = (): void => {
-    setExplorer(true);
-    setIgnite(false);
-    setDiscover(false);
-  };
-  const handleClickTree = (): void => {
-    setIgnite(true);
-    setDiscover(false);
-    setExplorer(false);
-  }; */
   const style = [
     "h-1",
     "bg-[#04d361]",
     "content-['']",
     "block",
-
     "bottom-0",
     "px-4",
     "mb-[-2px]",
   ];
 
   return (
-    <div className={`${roboto.className}  flex flex-col min-h-[660.2px]   `}>
+    <div className={`${roboto.className}  flex flex-col min-h-[660.2px]`}>
       <div
-        className={` flex relative text-white flex-row gap-7 border-b min-h-[72.2px] h-full border-[#29292e]  `}
+        className={` flex relative text-white flex-row gap-7  border-b min-h-[72.2px] h-full border-[#29292e]  `}
       >
-        <button onClick={() => handleClick("discover")}>
+        <button
+          className={brightness === discoverRef ? "p-4" : "brightness-75 p-4 "}
+          onClick={() => position(discoverRef)}
+          ref={discoverRef}
+        >
           <div>
             <Image
               src="discover-reduced.svg"
@@ -66,7 +66,11 @@ export default function CoursesHtml() {
             />
           </div>
         </button>
-        <button onClick={() => handleClick("explorer")} ref={explorerRef}>
+        <button
+          className={brightness === explorerRef ? "p-4" : "brightness-75 p-4"}
+          onClick={() => position(explorerRef)}
+          ref={explorerRef}
+        >
           {" "}
           <Image
             src="explorer.svg"
@@ -77,8 +81,10 @@ export default function CoursesHtml() {
           />
         </button>
         <button
-          className="relative"
-          onClick={() => handleClick("ignite")}
+          className={` ${
+            brightness === igniteRef ? "p-4" : "brightness-75 p-4"
+          }`}
+          onClick={() => position(igniteRef)}
           ref={igniteRef}
         >
           {" "}
@@ -95,21 +101,22 @@ export default function CoursesHtml() {
           style={{
             transition: "all .3s ease-in-out",
             transform: `translateX(${positionX}px)`,
+
             width: `${positionWidth}px`,
           }}
         ></div>
       </div>
 
-      <div className="">
+      <div className=" w-full ">
         {/* discovery */}
         <div
           className={`  ${
-            courses === "discover" ? "flex flex-row" : "hidden"
-          }     text-white  `}
+            brightness === discoverRef ? "flex flex-row" : "hidden"
+          }     text-white w-full `}
         >
-          <div>
+          <div className="max-w-[556px] w-full">
             <h4 className="font-bold  text-[32px]  pt-10 leading-9 mb-6 ">
-              Comece a programar do zero gratuitamente
+              Comece a programar do zero <br /> gratuitamente
             </h4>
             <p className=" text-[#E1E1E6] text-[16px]  leading-[26px]">
               Você vai encontrar aulas para dominar HTML, CSS, JavaScript, HTTP,
@@ -166,10 +173,10 @@ export default function CoursesHtml() {
         {/* explorer */}
         <div
           className={`  ${
-            courses === "explorer" ? "flex flex-row" : "hidden"
+            brightness === explorerRef ? "flex flex-row" : "hidden"
           }     text-white  `}
         >
-          <div>
+          <div className="max-w-[556px] w-full">
             <h4 className="font-bold  text-[32px]  pt-10 leading-9 mb-6 ">
               Acesse sua primeira vaga em programação
             </h4>
@@ -203,15 +210,13 @@ export default function CoursesHtml() {
             />
           </div>
         </div>
-      </div>
-      <div>
         {/* ignite */}
         <div
           className={`  ${
-            courses === "ignite" ? "flex flex-row" : "hidden"
+            brightness === igniteRef ? "flex flex-row" : "hidden"
           }     text-white  `}
         >
-          <div>
+          <div className="max-w-[556px] w-full">
             <h4 className="font-bold  text-[32px]  pt-10 leading-9 mb-6 ">
               Programa de especialização para
               <br /> acelerar sua carreira

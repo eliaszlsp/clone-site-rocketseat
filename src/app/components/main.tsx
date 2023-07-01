@@ -11,9 +11,9 @@ const roboto = Roboto({
 export default function Main(): any {
   return (
     <div>
-      <main className=" flex justify-center  flex-col ">
+      <main className=" flex justify-center  flex-col  ">
         <section
-          className={` ${roboto.className}  bg-[url('/bg.png')] bg-contain bg-[#121214] bg-no-repeat items-center text-white `}
+          className={` ${roboto.className}  bg-[url('/bg.png')] bg-contain bg-[#121214]  bg-no-repeat items-center text-white mt-[82px]`}
         >
           <div className="flex items-center text-center flex-col">
             {" "}
@@ -56,7 +56,7 @@ export default function Main(): any {
             </div>
           </div>
         </section>
-        <section className=" flex flex-col  justify-center items-center w-full ">
+        <section className="   flex flex-col  justify-center items-center   border-b border-b-[#29292e] w-full ">
           <div className=" pt-[3.75rem] text-white">
             <div className="flex flex-col items-center justify-center ">
               <span className="w-[.0938rem] h-[5rem] rotate-180 bg-gradient-to-t mb-[3.75rem] from-purple-500 to-transparent "></span>
@@ -66,8 +66,135 @@ export default function Main(): any {
               </h3>
             </div>
           </div>
-          <div className="  w-full max-w-[1120px]">
+          <div className="w-full max-w-[1120px]">
             <CoursesHtml />
+          </div>
+        </section>
+        <section
+          className={` ${roboto.className}  w-full justify-center items-center flex  bg-gradient-to-r from-[#121214]  to-[#09090a]  py-40  `}
+        >
+          <div className="flex justify-center  items-center flex-col w-full  min-w-[1120px] ">
+            <div className=" text-white font-bold text-5xl text-center">
+              <h3>
+                Por que escolher a <br /> plataforma Rocketseat?
+              </h3>
+            </div>
+            <div className="  grid grid-cols-3 gap-8 mt-20  gap  text-white ">
+              <div>
+                <div>
+                  <Image
+                    src="/certificate-medal.svg"
+                    width={48}
+                    height={48}
+                    alt="Vetor Gráfico"
+                    className="mb-4"
+                  />
+                  <h4 className="font-bold text-[28px] mb-4">
+                    Formação completa
+                  </h4>
+                </div>
+
+                <p>
+                  Comece do zero e avance na direção das <br /> suas primeiras
+                  oportunidades na área.
+                </p>
+              </div>
+              <div>
+                <div>
+                  <Image
+                    src="/browser.svg"
+                    width={48}
+                    height={48}
+                    alt="Vetor Gráfico"
+                    className="mb-4"
+                  />
+                  <h4 className="font-bold w-full flex-w  text-[28px] mb-4">
+                    Programa de especialização
+                  </h4>
+                </div>
+
+                <p>
+                  Especialize-se em stacks de ponta,
+                  <br /> amplamente utilizadas no mercado.
+                </p>
+              </div>
+              <div>
+                <div>
+                  <Image
+                    src="/video-play.svg"
+                    width={48}
+                    height={48}
+                    alt="Vetor Gráfico"
+                    className="mb-4"
+                  />
+                  <h4 className="font-bold text-[28px] mb-4 ">
+                    Aulas avançadas
+                  </h4>
+                </div>
+
+                <p>
+                  Esteja entre os melhores explorando cases <br /> reais de
+                  forma prática.
+                </p>
+              </div>
+              <div>
+                <div>
+                  <Image
+                    src="/laptop-chat.svg"
+                    width={48}
+                    height={48}
+                    alt="Vetor Gráfico"
+                    className="mb-4"
+                  />
+                  <h4 className="font-bold text-[28px] mb-4 ">
+                    Fórum exclusivo
+                  </h4>
+                </div>
+
+                <p>
+                  Tire dúvidas técnicas de forma estruturada <br /> e receba
+                  nosso suporte.
+                </p>
+              </div>
+              <div>
+                <div>
+                  <Image
+                    src="/mobile-device.svg"
+                    width={48}
+                    height={48}
+                    alt="Vetor Gráfico"
+                    className="mb-4"
+                  />
+                  <h4 className="font-bold text-[28px] mb-4   ">
+                    Projetos profissionais
+                  </h4>
+                </div>
+
+                <p>
+                  Aprenda na prática enquanto desenvolve <br /> aplicações de
+                  alto nível.
+                </p>
+              </div>
+              <div>
+                <div>
+                  <Image
+                    src="/profile.svg"
+                    width={48}
+                    height={48}
+                    alt="Vetor Gráfico"
+                    className="mb-4"
+                  />
+                  <h4 className="font-bold text-[28px] mb-4 ">
+                    Perfil personalizado
+                  </h4>
+                </div>
+
+                <p>
+                  Apresente sua jornada e conecte-se com <br /> outros devs e
+                  novas oportunidades.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
