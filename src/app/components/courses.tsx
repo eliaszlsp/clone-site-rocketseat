@@ -48,9 +48,9 @@ export default function CoursesHtml() {
   ];
 
   return (
-    <div className={`${roboto.className}  flex flex-col min-h-[660.2px]`}>
+    <div className={`${roboto.className}  flex flex-col min-h-[660  px]`}>
       <div
-        className={` flex relative text-white flex-row gap-7  border-b min-h-[72.2px] h-full border-[#29292e]  `}
+        className={` flex relative text-white flex-row gap-7  border-b min-h-[68px] h-full border-[#29292e]  `}
       >
         <button
           className={brightness === discoverRef ? "p-4" : "brightness-75 p-4 "}
