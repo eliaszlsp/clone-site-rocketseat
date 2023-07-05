@@ -3,11 +3,7 @@
    --scrollbar-background: transparent;
   }
 @tailwind base;
-* {
-    scrollbar-width: thin;
-    scrollbar-color: var(--secondary) var(--primary);
-  }
-  
+
   /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar,::-webkit-scrollbar-track {
     background: var(--scrollbar-background)

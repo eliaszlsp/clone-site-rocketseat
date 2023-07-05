@@ -2,6 +2,7 @@
 import { Roboto } from "next/font/google";
 import Image from "next/image";
 import CoursesHtml from "./courses";
+import CounterDev from "./counterdev";
 
 const roboto = Roboto({
   weight: ["700", "400"],
@@ -512,10 +513,10 @@ export default function Main(): any {
             </div>
           </div>
         </section>
-        <section className=" bg-[#121214]  py-40 flex flex-col justify-center  items-center w-full h-[696px] ">
+        <section className=" bg-[#121214]  pt-40 pb-[100px] flex flex-col justify-center  border-b border-b-[#29292e]  items-center w-full h-[696px] ">
           <div className=" w-[1120px]   flex flex-col justify-center h-full  items-center ">
-            <div className="flex flex-col text-[#e1e1e6]  text-center  w-full ">
-              <h3 className="mb-6  text-5xl leading-[54px]">
+            <div className="flex flex-col text-[#e1e1e6] h-full text-center  w-full ">
+              <h3 className="mb-6 font-bold text-5xl leading-[54px]">
                 {" "}
                 Empresas que contratam <br />
                 nossos alunos
@@ -527,10 +528,91 @@ export default function Main(): any {
                 educação.
               </p>
             </div>
-            <div className="text-white mt-20">
-              <div>oi</div>
+            <div className="text-white w-full min-h-[171px] mt-20">
+              <div className=" flex flex-wrap gap-x-10 gap-y-14 w-full h-full items-center  justify-center  ">
+                <div>
+                  <Image
+                    src="/meta.webp"
+                    width={114.01}
+                    height={43}
+                    alt="Author"
+                  />
+                </div>
+
+                <div className="w-87 h-[35px]">
+                  <Image
+                    src="/ciet.png"
+                    width={87}
+                    height={10}
+                    alt="logo ciet"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/totvs.webp"
+                    width={150}
+                    height={44.01}
+                    alt="Author"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/accenture.webp"
+                    width={162}
+                    height={43}
+                    alt="Author"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/stone.webp"
+                    width={120}
+                    height={45}
+                    alt="Author"
+                  />
+                </div>
+                <div>
+                  <Image src="/itau.png" width={57} height={57} alt="Author" />
+                </div>
+                <div>
+                  <Image
+                    src="/avanade.webp"
+                    width={205}
+                    height={43}
+                    alt="Author"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/compasso.webp"
+                    width={208}
+                    height={45.99}
+                    alt="Author"
+                  />
+                </div>
+
+                <div>
+                  <Image
+                    src="/nttdata.webp"
+                    width={148}
+                    height={36}
+                    alt="Author"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/invilla.webp"
+                    width={148}
+                    height={47}
+                    alt="Author"
+                  />
+                </div>
+              </div>
             </div>
           </div>
+        </section>
+        <section className="bg-gradient-to-r from-[#121214]  py-[105px] to-[#09090a] w-full  border-b border-b-[#29292e] h-[710px] flex justify-center items-center ">
+          <CounterDev />
         </section>
       </main>
     </div>
