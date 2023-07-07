@@ -2,11 +2,18 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function CounterDev() {
-  const [counter, setCounter] = useState(575);
+  const [counter, setCounter] = useState(574);
 
   useEffect(() => {
-    const dev = counter + 1;
-    setCounter(dev);
+    const interval = setInterval(() => {
+      setCounter((prevCounter) => {
+        if (prevCounter >= 600) {
+          clearInterval(interval);
+          return prevCounter;
+        }
+        return prevCounter + 1;
+      });
+    }, 50);
   }, []);
 
   return (

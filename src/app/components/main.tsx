@@ -18,7 +18,7 @@ export default function Main(): any {
         >
           <div className="flex items-center text-center flex-col">
             {" "}
-            <div className="font-normal mt-[5.625rem] gap-3 text-lg mb-4  max-h-6 h-full  text-[#04D361] flex flex-row ">
+            <div className="font-normal mt-[5.625rem] gap-4 text-lg mb-4  max-h-6 h-full justify-center items-center text-[#04D361] flex flex-row ">
               <Image src="/emoji.svg" width={24} height={24} alt="Saudação" />
               <span>Hello World</span>
             </div>
@@ -611,8 +611,11 @@ export default function Main(): any {
             </div>
           </div>
         </section>
-        <section className="bg-gradient-to-r from-[#121214]  py-[105px] to-[#09090a] w-full  border-b border-b-[#29292e] h-[710px] flex justify-center items-center ">
+        <section className="bg-gradient-to-r relative from-[#121214]  py-[105px] to-[#09090a] w-full   h-[710px] flex justify-center items-center ">
           <CounterDev />
+          <div className=" absolute h-[1px] bg-gradient-to-r w-full from-[#323238] bottom-0 to-[#32323840]">
+            {" "}
+          </div>
         </section>
       </main>
     </div>
