@@ -15,13 +15,13 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <>
-      <footer className=" bg-[#121214] relative  after:h-[.0625rem] after:absolute after:bg-[#29292e] after:bottom-[7.1875rem] after:content-[''] after:w-full  flex flex-col justify-center  items-center  h-[30.5rem] ">
+      <footer className=" bg-[#121214] relative  after:h-[.0625rem] after:absolute after:bg-[#29292e] after:bottom-[112px] after:content-[''] after:w-full  flex flex-col justify-center  items-center  h-[30.5rem] ">
         {" "}
         <div className=" w-[70rem]  flex flex-col h-[31.25rem] ">
           <div>
             <div className="h-[23.5rem] w-full py-20 flex flex-row  justify-between ">
               <div className="h-full w-fit">
-                <div className="mb-[3.125rem] ">
+                <div className="mb-[53px] ">
                   <Image
                     src="/boosting.svg"
                     width={256}
@@ -64,13 +64,13 @@ export default function Footer() {
                       Para empresas
                     </a>
                     <a className="" href="">
-                      Diretos autorais
+                      Direitos autorais
                     </a>
                     <a className="" href="">
-                      Termo de uso
+                      Termos de uso
                     </a>
                     <a className="" href="">
-                      Politicas de privacidade
+                      Políticas de privacidade
                     </a>
                   </div>
                   <div className="flex flex-col w-fit ">
@@ -90,8 +90,8 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className=" h-full flex items-center justify-center">
-            <div className="text-white flex flex-row h-12 gap-2 ">
+          <div className=" h-full flex items-center justify-between ">
+            <div className="text-white flex flex-row h-12 gap-2  ">
               <a
                 className="h-12 w-12 bg-[#202024] flex justify-center items-center rounded"
                 href=""

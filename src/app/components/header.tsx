@@ -2,11 +2,12 @@
 import { Roboto } from "next/font/google";
 import Image from "next/image";
 import Programs from "./programs";
+import Events from "./events";
 const roboto = Roboto({
   weight: ["700", "400"],
   subsets: ["latin"],
 });
-export default function Header(): any {
+export default function Header() {
   return (
     <>
       <div>
@@ -81,8 +82,11 @@ export default function Header(): any {
             </div>
           </header>
         </div>
-        <div className=" absolute mt-[82px] w-full bg-[#121214] hidden justify-center items-center   h-[387px] ">
+        <div className=" absolute mt-[82px] w-full bg-[#121214] hidden justify-center border-b border-[#29292e] items-center   h-[387px] ">
           <Programs />
+        </div>
+        <div className=" absolute mt-[82px] w-full bg-[#121214] flex justify-center border-b border-[#29292e] items-center   h-[277px] ">
+          <Events />
         </div>
       </div>
     </>

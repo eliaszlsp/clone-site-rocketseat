@@ -613,7 +613,7 @@ export default function Main(): any {
         </section>
         <section className="bg-gradient-to-r relative from-[#121214]  py-[105px] to-[#09090a] w-full   h-[710px] flex justify-center items-center ">
           <CounterDev />
-          <div className=" absolute h-[1px] bg-gradient-to-r w-full from-[#323238] bottom-0 to-[#32323840]">
+          <div className=" absolute h-[1px] bg-gradient-to-r w-full to-[#323238] bottom-0 from-[#3232384d]">
             {" "}
           </div>
         </section>
