@@ -3,11 +3,20 @@ import { Roboto } from "next/font/google";
 import Image from "next/image";
 import Programs from "./programs";
 import Events from "./events";
+import { useState } from "react";
 const roboto = Roboto({
   weight: ["700", "400"],
   subsets: ["latin"],
 });
 export default function Header() {
+  const [click, setClick] = useState("");
+
+  const handleClick = (display: string) => {
+    click == "Programas" || click == "Eventos"
+      ? setClick("")
+      : setClick(display);
+  };
+
   return (
     <>
       <div>
@@ -23,7 +32,10 @@ export default function Header() {
                 <li>
                   <a href="">Home</a>
                 </li>
-                <li className="flex flex-row items-center gap-x-[.3125rem] justify-center">
+                <button
+                  onClick={() => handleClick("Programas")}
+                  className="flex flex-row items-center gap-x-[.3125rem] justify-center"
+                >
                   <p>Programas</p>
                   <span>
                     <Image
@@ -33,8 +45,11 @@ export default function Header() {
                       alt="flecha para baixo"
                     />
                   </span>
-                </li>
-                <li className="flex flex-row items-center gap-x-[.3125rem] justify-center">
+                </button>
+                <button
+                  onClick={() => handleClick("Eventos")}
+                  className="flex flex-row items-center gap-x-[.3125rem] justify-center"
+                >
                   <p>Eventos</p>
                   <span>
                     <Image
@@ -44,7 +59,7 @@ export default function Header() {
                       alt="flecha para baixo"
                     />
                   </span>
-                </li>
+                </button>
                 <li>
                   <a href="">Blog</a>
                 </li>
@@ -82,10 +97,18 @@ export default function Header() {
             </div>
           </header>
         </div>
-        <div className=" absolute mt-[82px] w-full bg-[#121214] hidden justify-center border-b border-[#29292e] items-center   h-[387px] ">
+        <div
+          className={` absolute mt-[82px] w-full bg-[#121214] ${
+            click === "Programas" ? "flex" : "hidden"
+          } justify-center border-b border-[#29292e] items-center h-[387px] `}
+        >
           <Programs />
         </div>
-        <div className=" absolute mt-[82px] w-full bg-[#121214] flex justify-center border-b border-[#29292e] items-center   h-[277px] ">
+        <div
+          className={` absolute mt-[82px] w-full bg-[#121214] ${
+            click === "Eventos" ? "flex" : "hidden"
+          } justify-center border-b border-[#29292e] items-center h-[277px]`}
+        >
           <Events />
         </div>
       </div>
