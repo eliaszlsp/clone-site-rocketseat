@@ -8,69 +8,70 @@ const roboto = Roboto({
   weight: ["700", "400"],
   subsets: ["latin"],
 });
+
 export default function Header() {
   const [click, setClick] = useState("");
-
+  const disableScroll = (hidden: boolean) => {
+    if (hidden === true) {
+      document.body.classList.toggle("overflow-hidden");
+      document.body.classList.toggle("pr-[6px]");
+    }
+  };
   const handleClick = (display: string) => {
-    click == "Programas" || click == "Eventos"
-      ? setClick("")
-      : setClick(display);
+    setClick(click === "Programas" || click === "Eventos" ? "" : display);
+    disableScroll(true);
   };
 
   return (
     <>
       <div>
-        <div className="flex  fixed w-full z-10 h-[82px] border-b border-[#29292e] bg-[#121214] flex-col justify-center  items-center  min-w-max  ">
-          <header className="max-w-[1440px] w-full flex flex-row  justify-between items-center   px-6 ">
-            <div className="min-w-[210px]  min-h-[42px]  ">
+        <div
+          className={`flex  fixed w-full  ${
+            click === "" ? "" : "pr-[.375rem]"
+          }  z-10 h-[83px] border-b border-[#29292e] bg-[#121214] flex-col justify-center  items-center  min-w-max `}
+        >
+          <header className="max-w-[1440px]  w-full flex flex-row  min-h-full  justify-between items-center   px-6 ">
+            <div className="min-w-[210px] mb-1   ">
               <Image src="/logo.svg" width={210} height={42} alt="logo" />
             </div>
-            <div>
+            <nav className=" min-h-full w-[630px]  ">
               <ul
-                className={`${roboto.className}  font-normal flex gap-8 text-[#A8A8B3] flex-row `}
+                className={`${roboto.className} h-[82px] w-full px-4 items-center justify-center font-normal flex  gap-8  text-[#A8A8B3] flex-row `}
               >
-                <li>
+                <li className="flex flex-row items-center gap-x-[.3125rem]  transition-all duration-150 ease-linear  hover:text-white  h-full   hover:border-[#996dff] hover:border-b-[2px]   border-b-[2px] border-b-transparent  justify-center">
                   <a href="">Home</a>
                 </li>
                 <button
                   onClick={() => handleClick("Programas")}
-                  className="flex flex-row items-center gap-x-[.3125rem] justify-center"
+                  className="flex flex-row items-center gap-x-[.3125rem]   hover:text-white  h-full   hover:border-[#996dff] hover:border-b-[2px]   border-b-[2px] border-b-transparent  justify-center"
                 >
                   <p>Programas</p>
                   <span>
-                    <Image
-                      src="/chevron-down.svg"
-                      width={12}
-                      height={12}
-                      alt="flecha para baixo"
-                    />
+                    <div className="border-solid border-b-[2px] border-r-[2px] mb-[5px] ml-[2px] border-[#a8a8b3]  w-[7px] h-[7px] transform rotate-45"></div>
                   </span>
                 </button>
                 <button
                   onClick={() => handleClick("Eventos")}
-                  className="flex flex-row items-center gap-x-[.3125rem] justify-center"
+                  className=" gap-x-[.3125rem]  flex flex-row items-center    h-full   hover:border-[#996dff] hover:border-b-[2px]   border-b-[2px] border-b-transparent  justify-center  hover:text-white "
                 >
                   <p>Eventos</p>
                   <span>
-                    <Image
-                      src="/chevron-down.svg"
-                      width={12}
-                      height={12}
-                      alt="flecha para baixo"
-                    />
+                    <div className="border-solid border-b-[2px] border-r-[2px] mb-[5px] ml-[2px] border-[#a8a8b3]  w-[7px] h-[7px] transform rotate-45"></div>
                   </span>
                 </button>
-                <li>
-                  <a href="">Blog</a>
+                <li className=" hover:text-white transition-all duration-150 ease-linear   h-full  flex items-center  hover:border-[#996dff] hover:border-b-[2px]   border-b-[2px] border-b-transparent">
+                  <a className="  " href="">
+                    Blog
+                  </a>
                 </li>
-                <li>
+                <li className=" flex flex-row items-center  transition-all duration-150 ease-linear  min-w-[94.06px]   h-full   hover:border-[#996dff] hover:border-b-[2px]   border-b-[2px] border-b-transparent  justify-center  hover:text-white ">
                   <a href="">A Rocketseat</a>
                 </li>
-                <li>
+                <li className="  flex flex-row items-center  transition-all duration-150 ease-linear min-w-[106.91px]  h-full   hover:border-[#996dff] hover:border-b-[2px]   border-b-[2px] border-b-transparent  justify-center   hover:text-white">
                   <a href="">Para empresas</a>
                 </li>
               </ul>
-            </div>
+            </nav>
             <div>
               <ul
                 className={` ${roboto.className} font-bold uppercase items-center gap-8  text-xs text-[#FFFFFF] flex-row flex `}
@@ -88,8 +89,8 @@ export default function Header() {
                   <a href="">Entrar</a>
                 </div>
 
-                <button className="border flex justify-center items-center w-[118.9504px] h-9 rounded-[5px] border-[#8257E5]">
-                  <a href="" className="uppercase block  ">
+                <button className="border flex justify-center items-center w-[118.9504px] h-[38px] rounded-[5px] border-[#8257E5] hover:bg-[#9466ff] transition all duration-300 ">
+                  <a href="" className="uppercase block   ">
                     criar conta{" "}
                   </a>
                 </button>
@@ -98,7 +99,7 @@ export default function Header() {
           </header>
         </div>
         <div
-          className={` absolute mt-[82px] w-full bg-[#121214] ${
+          className={` fixed z-50 mt-[82px] w-full bg-[#121214] ${
             click === "Programas" ? "flex" : "hidden"
           } justify-center border-b border-[#29292e] items-center h-[387px] `}
         >

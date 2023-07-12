@@ -33,10 +33,6 @@ export default function CoursesHtml() {
 
   const [courses, setCourses] = useState<string>("discover");
 
-  const handleClick = (course: string): void => {
-    setCourses(course);
-  };
-
   const style = [
     "h-1",
     "bg-[#04d361]",
@@ -48,7 +44,7 @@ export default function CoursesHtml() {
   ];
 
   return (
-    <div className={`${roboto.className}  flex flex-col min-h-[660  px]`}>
+    <div className={`${roboto.className}  flex flex-col min-h-[660px] mx-6`}>
       <div
         className={` flex relative text-white flex-row gap-7  border-b min-h-[68px] h-full border-[#29292e]  `}
       >
@@ -97,7 +93,7 @@ export default function CoursesHtml() {
         </button>
 
         <div
-          className={`${style.join(" ")} absolute px-4`}
+          className={`${style.join(" ")} absolute px-4 rounded-sm `}
           style={{
             transition: "all .3s ease-in-out",
             transform: `translateX(${positionX}px)`,
@@ -144,18 +140,18 @@ export default function CoursesHtml() {
               nos <br /> estudos, te mostrando que só você pode mudar e evoluir
               como dev.&quot;
             </p>
-            <div className="flex flex-row mt-4  items-center  ">
-              <div className="  w-[60px] h-[60px]  border-[#4863f7] border-2 flex items-center justify-center  rounded-full">
+            <div className="flex flex-row mt-4 min-h-[64px] items-center  ">
+              <div className="  w-[64px] h-[64px]  border-[#4863f7] border-2 flex items-center justify-center  rounded-full">
                 <Image
                   src="/ariadne-liranco.png"
-                  width={52}
-                  height={52}
+                  width={54}
+                  height={54}
                   alt="Author"
                   style={{ borderRadius: "50%", padding: "1px" }}
                 />
               </div>
 
-              <div className="flex flex-col ml-5 ">
+              <div className="flex flex-col ml-5 justify-between  leading-7 ">
                 <h4 className=" font-bold">Ariadne Liranço</h4>
                 <span className="">@aricadidolira</span>
               </div>
@@ -218,15 +214,14 @@ export default function CoursesHtml() {
         >
           <div className="max-w-[556px] w-full">
             <h4 className="font-bold  text-[32px]  pt-10 leading-9 mb-6 ">
-              Programa de especialização para
-              <br /> acelerar sua carreira
+              Programa de especialização <br /> para acelerar sua carreira
             </h4>
             <p className=" text-[#E1E1E6] text-[16px]  leading-[26px]">
               Especialize-se em stacks específicas amplamente utilizadas e
               valorizadas <br /> no mercado como React, React Native e Node.js
             </p>
             <a
-              className="flex flex-row mt-8 mb-[60px]  max-w-[240.3px] h-[56px] bg-[#00875f] font-bold text-sm rounded-[5px] gap-[15px] justify-center items-center uppercase  "
+              className="flex flex-row mt-8 mb-[60px]  max-w-[252.2px] h-[56px] bg-[#00875f] font-bold text-sm rounded-[5px] gap-[15px] justify-center items-center uppercase  "
               href=""
             >
               conhecer o ignite
@@ -245,12 +240,12 @@ export default function CoursesHtml() {
               estar em alta no <br /> mercado fazem o meu dia ficar mais
               feliz&quot;
             </p>
-            <div className="flex flex-row items-center mt-4">
+            <div className="flex flex-row items-center  leading-7  mt-4">
               <div className="w-[64px] h-[64px]  border-[#00875f] border-2 flex items-center justify-center  rounded-full">
                 <Image
                   src="/henrique-weiand.webp"
-                  width={52}
-                  height={52}
+                  width={54}
+                  height={54}
                   alt="Author"
                   style={{ borderRadius: "50%", padding: "1px" }}
                 />

@@ -43,7 +43,7 @@ export default function CounterDev() {
             </p>
           </div>
 
-          <div className=" rounded-[5px] w-[240px] h-[62px] flex items-center justify-center  font-bold  bg-[#121214]  uppercase text-white border  border-[#8257E5]">
+          <div className=" rounded-[5px] w-[240px] h-[63px] flex items-center justify-center  font-bold  cursor-pointer transition duration-150  ease-[cubic-bezier(0.25, 0.46, 0.45, 0.94)]       bg-[#121214] hover:bg-[#996dff] uppercase text-white border  border-[#8257E5]">
             <a className="" href="">
               começar agora
             </a>

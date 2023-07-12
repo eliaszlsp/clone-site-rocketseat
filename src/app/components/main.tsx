@@ -14,7 +14,7 @@ export default function Main(): any {
     <div className={roboto.className}>
       <main className=" flex justify-center  flex-col  ">
         <section
-          className={` ${roboto.className}  bg-[url('/bg.png')] bg-contain bg-[#121214]  bg-no-repeat items-center text-white mt-[82px]`}
+          className={` ${roboto.className}  bg-[url('/bg.png')] bg-contain bg-[#121214]  bg-no-repeat items-center text-white mt-[83px]`}
         >
           <div className="flex items-center text-center flex-col">
             {" "}
@@ -25,17 +25,20 @@ export default function Main(): any {
             <h1 className="font-bold text-[56px] mb-4  leading-[60px]">
               Acelere cada etapa da sua <br /> carreira em programação
             </h1>
-            <h2 className="leading-[26px] mb-10">
+            <h2 className="leading-[26px] text-[#e1e1e6] mb-10">
               O mapa completo para você impulsionar sua evolução e acessar{" "}
               <br /> as melhores oportunidades da sua carreira como dev.
             </h2>
-            <div className="   rounded-[.3125rem]  border-[#8257E5]  mb-[7.25rem] border    ">
+            <div className="rounded-[.3125rem]  min-w-[280px]  hover:bg-[#633bbc]  transition-all duration-200  h-[56px] flex flex-row  justify-center items-center bg-[#8257E5]   mb-[7.25rem]">
               <a
-                className="font-bold flex-row flex justify-center items-center text-base  text-center  w-[17.5794rem] h-[3.5rem] bg-[#8257E5] gap-x-6   uppercase "
+                className="font-bold text-base flex flex-row items-center   justify-center leading-[16px]  min-w-full min-h-full  py-[15px] pl-6 pr-[16px]    gap-6   uppercase "
                 href=""
               >
-                embarcar no foguete
-                <span className="   ">
+                <div className="mt-[2px] ">
+                  <p>embarcar no foguete </p>
+                </div>
+
+                <span className=" inline-block  ">
                   <Image
                     src="/arrow-right-bg-purple.svg"
                     width={32}
@@ -57,11 +60,11 @@ export default function Main(): any {
             </div>
           </div>
         </section>
-        <section className="   flex flex-col  justify-center items-center h-full pb-[60px] max-h-[1108px] border-b border-b-[#29292e] w-full ">
-          <div className=" pt-[3.75rem] text-white">
+        <section className="   flex flex-col   items-center h-full py-[60px] min-h-[1108px]  border-b border-b-[#29292e] w-full ">
+          <div className=" h-full text-white">
             <div className="flex flex-col items-center justify-center ">
-              <span className="w-[.0938rem] h-[5rem] rotate-180 bg-gradient-to-t mb-[3.75rem] from-purple-500 to-transparent "></span>
-              <h3 className="font-bold text-[#e1e1e6] text-[48px] mb-20 text-center  leading-[54px]">
+              <span className="w-[.0938rem] h-[5rem] rotate-180 bg-gradient-to-t  mb-[3.75rem] from-purple-500 to-transparent "></span>
+              <h3 className="font-bold text-[#e1e1e6] text-[48px] mb-20 text-center   leading-[54px]">
                 Somos uma plataforma completa de <br /> aprendizado contínuo em
                 programação
               </h3>
