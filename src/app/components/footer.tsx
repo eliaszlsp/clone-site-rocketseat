@@ -11,6 +11,22 @@ import {
   CaretUp,
 } from "@phosphor-icons/react";
 import Image from "next/image";
+const beforeFooter = [
+  "before:content-['']",
+  "before:absolute",
+  "relative",
+  "before:bottom-0",
+  "before:right-0",
+  "before:w-0",
+  "before:h-0.5",
+  "before:bg-[#8257e5]",
+  "before:transition-[width]",
+  "before:duration-[.6s]",
+  "w-fit",
+  "before:ease-rocket-expo",
+  "before:hover:w-full",
+  "before:hover:left-0",
+];
 
 export default function Footer() {
   return (
@@ -38,18 +54,18 @@ export default function Footer() {
               </div>
               <div className="  h-[23.5rem]">
                 <nav className="h-[13.5rem] w-[39.9375rem] leading-9 font-normal  text-[#a8a8b3] justify-between flex flex-row ">
-                  <div className="flex flex-col   w-fit">
+                  <div className="flex flex-col w-fit">
                     <span className="font-bold  text-[#e1e1e6]">Programas</span>
-                    <a className="" href="">
+                    <a className={beforeFooter.join(" ")} href="">
                       Discover{" "}
                     </a>
-                    <a className="" href="">
+                    <a className={beforeFooter.join(" ")} href="">
                       Ignite
                     </a>
-                    <a className="" href="">
+                    <a className={beforeFooter.join(" ")} href="">
                       Explorer
                     </a>
-                    <a className="" href="">
+                    <a className={beforeFooter.join(" ")} href="">
                       Blog
                     </a>
                   </div>
@@ -57,19 +73,19 @@ export default function Footer() {
                     <span className="font-bold leading-9 text-[#e1e1e6]">
                       Sobre
                     </span>
-                    <a className="" href="">
+                    <a className={beforeFooter.join(" ")} href="">
                       A Rocketseat{" "}
                     </a>
-                    <a className="" href="">
+                    <a className={beforeFooter.join(" ")} href="">
                       Para empresas
                     </a>
-                    <a className="" href="">
+                    <a className={beforeFooter.join(" ")} href="">
                       Direitos autorais
                     </a>
-                    <a className="" href="">
+                    <a className={beforeFooter.join(" ")} href="">
                       Termos de uso
                     </a>
-                    <a className="" href="">
+                    <a className={beforeFooter.join(" ")} href="">
                       Políticas de privacidade
                     </a>
                   </div>
@@ -77,10 +93,10 @@ export default function Footer() {
                     <span className="font-bold  leading-9  text-[#e1e1e6] ">
                       Dúvidas
                     </span>
-                    <a className="" href="">
+                    <a className={beforeFooter.join(" ")} href="">
                       Comunidade
                     </a>
-                    <a className="" href="">
+                    <a className={beforeFooter.join(" ")} href="">
                       {" "}
                       Central de ajuda
                     </a>
