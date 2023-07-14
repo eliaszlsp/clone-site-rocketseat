@@ -19,7 +19,10 @@ export default function Main(): any {
           <div className="flex items-center text-center flex-col">
             {" "}
             <div className="font-normal mt-[5.625rem] gap-4 text-lg mb-4  max-h-6 h-full justify-center items-center text-[#04D361] flex flex-row ">
-              <Image src="/emoji.svg" width={24} height={24} alt="Saudação" />
+              <div className=" animate-rocket   origin-[70%_70%]">
+                <Image src="/emoji.svg" width={24} height={24} alt="Saudação" />
+              </div>
+
               <span>Hello World</span>
             </div>
             <h1 className="font-bold text-[56px] mb-4  leading-[60px]">

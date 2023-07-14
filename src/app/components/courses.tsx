@@ -1,12 +1,6 @@
 import { Roboto } from "next/font/google";
 import Image from "next/image";
-import {
-  LegacyRef,
-  MutableRefObject,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { useEffect, useRef, useState } from "react";
 const roboto = Roboto({
   weight: ["700", "400"],
   subsets: ["latin"],
