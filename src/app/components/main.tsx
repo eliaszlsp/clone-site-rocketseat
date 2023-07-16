@@ -3,13 +3,57 @@ import { Roboto } from "next/font/google";
 import Image from "next/image";
 import CoursesHtml from "./courses";
 import CounterDev from "./counterdev";
+import { useEffect, useRef } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+interface AnimatedInViewStyle {
+  transform: string;
+  opacity: number;
+  transition: string;
+}
 
 const roboto = Roboto({
   weight: ["700", "400"],
   subsets: ["latin"],
 });
+/* const useAnimatedInView = (options: any, transition: string) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, options);
 
-export default function Main(): any {
+  const style: AnimatedInViewStyle = {
+    transform: isInView ? "none" : "translateX(-200px)",
+    opacity: isInView ? 1 : 0,
+    transition: transition,
+  };
+
+  return [ref, style];
+}; */
+export default function Main() {
+  /* const [ref1, style1] = useAnimatedInView(
+    { once: true },
+    "all .25s cubic-bezier(.25,.46,.45,.94).25s"
+  );
+  const [ref2, style2] = useAnimatedInView(
+    { once: true },
+    "all .25s cubic-bezier(.25,.46,.45,.94) .25s "
+  );
+
+  const [ref3, style3] = useAnimatedInView(
+    { once: true },
+    "all .25s cubic-bezier(.25,.46,.45,.94)  "
+  );
+  const [ref4, style4] = useAnimatedInView(
+    { once: true },
+    "all .25s cubic-bezier(.25,.46,.45,.94) .025s"
+  ); */
+  useEffect(() => {
+    AOS.init({
+      initClassName: "aos-init",
+      animatedClassName: "aos-animate",
+    });
+  }, []);
+
   return (
     <div className={roboto.className}>
       <main className=" flex justify-center  flex-col  ">
@@ -18,23 +62,33 @@ export default function Main(): any {
         >
           <div className="flex items-center text-center flex-col">
             {" "}
-            <div className="font-normal mt-[5.625rem] gap-4 text-lg mb-4  max-h-6 h-full justify-center items-center text-[#04D361] flex flex-row ">
+            <div className="font-normal mt-[5.625rem] gap-4 text-lg mb-4 aos-init aos-animate   max-h-6 h-full justify-center items-center text-[#04D361] flex flex-row ">
               <div className=" animate-rocket   origin-[70%_70%]">
                 <Image src="/emoji.svg" width={24} height={24} alt="Saudação" />
               </div>
 
               <span>Hello World</span>
             </div>
-            <h1 className="font-bold text-[56px] mb-4  leading-[60px]">
+            <h1
+              data-aos="fade-in"
+              data-aos-delay="100"
+              className="font-bold  text-[56px] mb-4  aos-init aos-animate leading-[60px]"
+            >
               Acelere cada etapa da sua <br /> carreira em programação
             </h1>
-            <h2 className="leading-[26px] text-[#e1e1e6] mb-10">
+            <h2
+              data-aos="fade-in"
+              data-aos-delay="20"
+              className="leading-[26px] aos-init aos-animate  text-[#e1e1e6] mb-10"
+            >
               O mapa completo para você impulsionar sua evolução e acessar{" "}
               <br /> as melhores oportunidades da sua carreira como dev.
             </h2>
             <div className="rounded-[.3125rem]  min-w-[280px]  hover:bg-[#633bbc]  transition-all duration-200  h-[56px] flex flex-row  justify-center items-center bg-[#8257E5]   mb-[7.25rem]">
               <a
-                className="font-bold text-base flex flex-row items-center   justify-center leading-[16px]  min-w-full min-h-full  py-[15px] pl-6 pr-[16px]    gap-6   uppercase "
+                data-aos="fade-in"
+                data-aos-delay="300"
+                className="font-bold text-base  aos-init aos-animate flex flex-row items-center   justify-center leading-[16px]  min-w-full min-h-full  py-[15px] pl-6 pr-[16px]    gap-6   uppercase "
                 href=""
               >
                 <div className="mt-[2px] ">
@@ -56,8 +110,9 @@ export default function Main(): any {
                 <iframe
                   className="absolute top-0 left-0 w-full h-full bg-[#29292e] border-[#29292e] border rounded-lg  "
                   src="https://www.youtube.com/embed/uKsq7y6DJ84"
-                  title="YouTube Video"
-                  allowFullScreen
+                  title="Apresentação da Rocketseat"
+                  frameBorder="0"
+                  allow="autoplay"
                 ></iframe>
               </div>
             </div>
@@ -67,7 +122,10 @@ export default function Main(): any {
           <div className=" h-full text-white">
             <div className="flex flex-col items-center justify-center ">
               <span className="w-[.0938rem] h-[5rem] rotate-180 bg-gradient-to-t  mb-[3.75rem] from-purple-500 to-transparent "></span>
-              <h3 className="font-bold text-[#e1e1e6] text-[48px] mb-20 text-center   leading-[54px]">
+              <h3
+                data-aos="fade-up"
+                className="font-bold text-[#e1e1e6] aos-init aos-animate text-[48px] mb-20 text-center   leading-[54px]"
+              >
                 Somos uma plataforma completa de <br /> aprendizado contínuo em
                 programação
               </h3>
@@ -78,16 +136,23 @@ export default function Main(): any {
           </div>
         </section>
         <section
-          className={` ${roboto.className} min-h-[880px] w-full justify-center items-center flex  bg-gradient-to-r from-[#121214]  to-[#09090a]  py-40  `}
+          className={` ${roboto.className} min-h-[880px] w-full justify-center items-center flex delay-200 bg-gradient-to-r from-[#121214]  to-[#09090a]  py-40  `}
         >
-          <div className="flex justify-center  items-center flex-col   w-[1120px] ">
-            <div className=" text-white font-bold text-5xl leading-[54px] text-center">
-              <h3>
+          <div className="flex justify-center  items-center flex-col h-[560px]   w-[1120px] ">
+            <div className=" text-white font-bold text-5xl  text-center">
+              <h3
+                data-aos="fade-up"
+                className="leading-[54px] aos-init aos-animate"
+              >
                 Por que escolher a <br /> plataforma Rocketseat?
               </h3>
             </div>
-            <div className="  grid grid-cols-3 gap-8 mt-20  gap  text-white ">
-              <div>
+            <div className="  grid grid-cols-[repeat(3,2fr)] gap-x-6  gap-y-7 mt-20  min-w-full text-white ">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="100"
+                className="delay-1000 w-[356px]   aos-init aos-animate        "
+              >
                 <div>
                   <Image
                     src="/certificate-medal.svg"
@@ -96,7 +161,7 @@ export default function Main(): any {
                     alt="Vetor Gráfico"
                     className="mb-4"
                   />
-                  <h4 className="font-bold text-[28px] mb-4">
+                  <h4 className="font-bold text-[28px]  leading-[38px] mb-4">
                     Formação completa
                   </h4>
                 </div>
@@ -106,7 +171,11 @@ export default function Main(): any {
                   oportunidades na área.
                 </p>
               </div>
-              <div>
+              <div
+                data-aos="fade-up"
+                data-aos-delay="200"
+                className="delay-500 w-[356px]   aos-init aos-animate  "
+              >
                 <div>
                   <Image
                     src="/browser.svg"
@@ -115,7 +184,7 @@ export default function Main(): any {
                     alt="Vetor Gráfico"
                     className="mb-4"
                   />
-                  <h4 className="font-bold w-full flex-w  text-[28px] mb-4">
+                  <h4 className="font-bold      leading-[38px] text-[28px] mb-4">
                     Programa de especialização
                   </h4>
                 </div>
@@ -125,7 +194,11 @@ export default function Main(): any {
                   <br /> amplamente utilizadas no mercado.
                 </p>
               </div>
-              <div>
+              <div
+                data-aos="fade-up"
+                data-aos-delay="300"
+                className="delay-500 w-[356px]   aos-init aos-animate      "
+              >
                 <div>
                   <Image
                     src="/video-play.svg"
@@ -134,7 +207,7 @@ export default function Main(): any {
                     alt="Vetor Gráfico"
                     className="mb-4"
                   />
-                  <h4 className="font-bold text-[28px] mb-4 ">
+                  <h4 className="font-bold text-[28px]   leading-[38px] mb-4 ">
                     Aulas avançadas
                   </h4>
                 </div>
@@ -144,7 +217,11 @@ export default function Main(): any {
                   forma prática.
                 </p>
               </div>
-              <div>
+              <div
+                data-aos="fade-up"
+                data-aos-delay="100"
+                className="delay-500 w-[356px]   aos-init aos-animate       "
+              >
                 <div>
                   <Image
                     src="/laptop-chat.svg"
@@ -153,7 +230,7 @@ export default function Main(): any {
                     alt="Vetor Gráfico"
                     className="mb-4"
                   />
-                  <h4 className="font-bold text-[28px] mb-4 ">
+                  <h4 className="font-bold text-[28px]  leading-[38px]  mb-4 ">
                     Fórum exclusivo
                   </h4>
                 </div>
@@ -163,7 +240,11 @@ export default function Main(): any {
                   nosso suporte.
                 </p>
               </div>
-              <div>
+              <div
+                data-aos="fade-up"
+                data-aos-delay="200"
+                className="delay-500 w-[356px]   aos-init aos-animate  "
+              >
                 <div>
                   <Image
                     src="/mobile-device.svg"
@@ -172,7 +253,7 @@ export default function Main(): any {
                     alt="Vetor Gráfico"
                     className="mb-4"
                   />
-                  <h4 className="font-bold text-[28px] mb-4   ">
+                  <h4 className="font-bold text-[28px]  leading-[38px] mb-4   ">
                     Projetos profissionais
                   </h4>
                 </div>
@@ -182,7 +263,11 @@ export default function Main(): any {
                   alto nível.
                 </p>
               </div>
-              <div>
+              <div
+                data-aos="fade-up"
+                data-aos-delay="300"
+                className="delay-500  w-[356px]   aos-init aos-animate  "
+              >
                 <div>
                   <Image
                     src="/profile.svg"
@@ -191,7 +276,7 @@ export default function Main(): any {
                     alt="Vetor Gráfico"
                     className="mb-4"
                   />
-                  <h4 className="font-bold text-[28px] mb-4 ">
+                  <h4 className="font-bold text-[28px]  leading-[38px] mb-4 ">
                     Perfil personalizado
                   </h4>
                 </div>
@@ -208,21 +293,34 @@ export default function Main(): any {
         <section className="min-h-[679px] flex items-center justify-center bg-[#121214]">
           <div className="w-[1120px] flex flex-col justify-center items-center">
             <div className="flex  justify-between items-center mb-20 w-full">
-              <h3 className="font-bold text-5xl leading-[58px] text-[#e1e1e6] ">
+              <h3
+                data-aos="fade-up"
+                className="font-bold text-5xl leading-[58px] aos-init aos-animate  text-[#e1e1e6] "
+              >
                 Impulsionamos milhares <br /> de devs diariamente
               </h3>
-              <Image
-                src="/boosting.svg"
-                width={160}
-                height={50}
-                alt="Vetor gráfico"
-              />
+              <div
+                data-aos="fade-left"
+                data-aos-delay="100"
+                className="aos-init aos-animate"
+              >
+                <Image
+                  src="/boosting.svg"
+                  width={160}
+                  height={50}
+                  alt="Vetor gráfico"
+                />
+              </div>
             </div>
             <div className="grid grid-cols-4 w-full gap-8 ">
               <div className="pb-4 ">
-                <div className="w-fit">
+                <div
+                  data-aos="fade-in"
+                  data-aos-delay="200"
+                  className="w-fit aos-init aos-animate  "
+                >
                   <h4 className="text-[56px] pb-4 text-[#e1e1e6] w-fit font-bold">
-                    <span className="text-[56px] text-[#04d361] font-bold">
+                    <span className="text-[56px]  text-[#04d361] font-bold">
                       {" "}
                       +737{" "}
                     </span>{" "}
@@ -231,12 +329,20 @@ export default function Main(): any {
                   <div className=" bg-gradient-to-r from-[#8257e6] to-[rgba(130,87,230,.25)] h-[3px] w-full"></div>
                 </div>
 
-                <p className="pt-8 text-lg font-normal text-[#e1e1e6]">
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  className="pt-8 text-lg font-normal aos-init aos-animate text-[#e1e1e6]"
+                >
                   Devs impactados por <br /> eventos e cursos gratuitos
                 </p>
               </div>
               <div className="pb-4">
-                <div className="w-fit">
+                <div
+                  data-aos="fade-in"
+                  data-aos-delay="250"
+                  className="w-fit aos-init aos-animate"
+                >
                   <h4 className="text-[56px] pb-4 text-[#e1e1e6] w-fit font-bold">
                     {" "}
                     <span className="text-[56px] text-[#04d361] font-bold">
@@ -248,12 +354,20 @@ export default function Main(): any {
                   <div className=" bg-gradient-to-r from-[#8257e6] to-[rgba(130,87,230,.25)] h-[3px] w-full"></div>
                 </div>
 
-                <p className="pt-8  text-lg text-[#e1e1e6]">
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay="350"
+                  className="pt-8 aos-init aos-animate  text-lg text-[#e1e1e6]"
+                >
                   Alunos e <br /> alunas
                 </p>
               </div>
               <div className="pb-4">
-                <div className="w-fit">
+                <div
+                  data-aos="fade-in"
+                  data-aos-delay="300"
+                  className="w-fit aos-init aos-animate"
+                >
                   <h4 className="text-[56px] pb-4 text-[#e1e1e6] w-fit font-bold">
                     {" "}
                     <span className="text-[56px] text-[#04d361] font-bold">
@@ -264,13 +378,21 @@ export default function Main(): any {
                   <div className=" bg-gradient-to-r from-[#8257e6] to-[rgba(130,87,230,.25)] h-[3px] w-full"></div>
                 </div>
 
-                <p className="pt-8 text-lg text-[#e1e1e6]">
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                  className="pt-8 text-lg aos-init aos-animate text-[#e1e1e6]"
+                >
                   Devs no canal <br />
                   do Youtube
                 </p>
               </div>
               <div className=" ">
-                <div className="w-fit">
+                <div
+                  data-aos="fade-in"
+                  data-aos-delay="350"
+                  className="w-fit aos-init aos-animate"
+                >
                   <h4 className="text-[56px] pb-4  text-[#e1e1e6] font-bold w-fit">
                     {" "}
                     <span className="text-[56px] text-[#04d361] font-bold">
@@ -281,7 +403,11 @@ export default function Main(): any {
                   <div className=" bg-gradient-to-r from-[#8257e6] to-[rgba(130,87,230,.25)] h-[3px] w-full"></div>
                 </div>
 
-                <p className="pt-8  text-lg text-[#e1e1e6] ">
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay="450"
+                  className="pt-8  text-lg aos-init aos-animate text-[#e1e1e6] "
+                >
                   Devs na comunidade <br /> aberta no Discord
                 </p>
               </div>

@@ -22,7 +22,6 @@ export default function CoursesHtml() {
 
   useEffect(() => {
     setPositionWidth(discoverRef.current?.offsetWidth as number);
-    console.log(discoverRef.current);
   }, []);
 
   const [courses, setCourses] = useState<string>("discover");
@@ -36,10 +35,11 @@ export default function CoursesHtml() {
     "px-4",
     "mb-[-2px]",
   ];
-
+  /* fazer acessibilidade  */
   return (
     <div className={`${roboto.className}  flex flex-col min-h-[660px] mx-6`}>
       <div
+        aria-label="Encontre a melhor etapa para você estudar programação"
         className={` flex relative text-white flex-row gap-7  border-b min-h-[68px] h-full border-[#29292e]  `}
       >
         <button

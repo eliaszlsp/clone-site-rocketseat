@@ -38,10 +38,12 @@ module.exports = {
             transform: 'rotate(0deg)'
           },
         },
-      transitionTimingFunction: {
-        'rocket-expo': 'cubic-bezier(0.25, 1, 0.5, 1)',
+     
+    }},
+     transitionTimingFunction: {
+        'rocket-expo': 'cubic-bezier(0.25, 1, 0.5, 1)', 
+         'rocket-main':' cubic-bezier(.25,.46,.45,.94)',       
       }
-    }}
   },
   
   plugins: [],

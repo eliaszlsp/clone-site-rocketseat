@@ -1,5 +1,8 @@
 import "./globals.css";
 import { Roboto } from "next/font/google";
+import "aos/dist/aos.css";
+import AOS from "aos";
+import { useEffect } from "react";
 
 const roboto = Roboto({
   weight: ["700", "400"],
