@@ -28,7 +28,7 @@ export default function CounterDev() {
           return prevCounter;
         });
       }
-    }, 50);
+    }, 30);
   }, [counterView]);
 
   return (

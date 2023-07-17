@@ -31,10 +31,37 @@ export default function Header() {
           }  z-10 h-[83px] border-b border-[#29292e] bg-[#121214] flex-col justify-center  items-center  min-w-max `}
         >
           <header className="max-w-[1440px]  w-full flex flex-row  min-h-full  justify-between items-center   px-6 ">
-            <div className="min-w-[210px] mb-1   ">
+            <div className="lg:hidden flex flex-row justify-between items-center max-w-[83.83px] w-full">
+              <div>
+                <Image
+                  src="rocketseat-logo-mobile.svg"
+                  width={28}
+                  height={36}
+                  alt="logo"
+                />
+              </div>
+              <div className="w-[1px] h-[31px] bg-[#29292e] "></div>
+              <div>
+                <button
+                  onClick={() => {
+                    handleClick("Programas");
+                  }}
+                  aria-label="Menu mobile"
+                >
+                  <Image
+                    src="menubutton.svg"
+                    width={25}
+                    height={18}
+                    alt="menumobile"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <div className="min-w-[210px] mb-1 max-lg:hidden  ">
               <Image src="/logo.svg" width={210} height={42} alt="logo" />
             </div>
-            <nav className=" min-h-full w-[630px]  ">
+            <nav className=" min-h-full w-[630px] max-lg:hidden   ">
               <ul
                 className={`${roboto.className} h-[82px] w-full px-4 items-center justify-center font-normal flex  gap-8  text-[#A8A8B3] flex-row `}
               >
@@ -76,7 +103,7 @@ export default function Header() {
               <ul
                 className={` ${roboto.className} font-bold uppercase items-center gap-8  text-xs text-[#FFFFFF] flex-row flex `}
               >
-                <div className="flex flex-row items-center justify-center gap-2">
+                <div className="flex max-lg:hidden flex-row items-center justify-center gap-2">
                   <span>
                     {" "}
                     <Image
@@ -86,7 +113,20 @@ export default function Header() {
                       alt="Usuário"
                     />{" "}
                   </span>
-                  <a href="">Entrar</a>
+                  <a className="" href="">
+                    Entrar
+                  </a>
+                </div>
+
+                <div className="flex lg:hidden flex-row items-center justify-center gap-2">
+                  <a className="" href="">
+                    <Image
+                      src="/user-mobile.svg"
+                      width={24}
+                      height={24}
+                      alt="Usuário"
+                    />{" "}
+                  </a>
                 </div>
 
                 <button className="border flex justify-center items-center w-[118.9504px] h-[38px] rounded-[5px] border-[#8257E5] hover:bg-[#9466ff] transition all duration-300 ">
@@ -99,16 +139,16 @@ export default function Header() {
           </header>
         </div>
         <div
-          className={` fixed z-50 mt-[82px] w-full bg-[#121214] ${
+          className={` fixed  z-50 mt-[82px] w-full bg-[#121214] ${
             click === "Programas" ? "flex" : "hidden"
-          } justify-center border-b border-[#29292e] items-center h-[387px] `}
+          } justify-center border-b border-[#29292e] items-center h-[387px] max-lg:h-full `}
         >
           <Programs />
         </div>
         <div
-          className={` absolute mt-[82px] w-full bg-[#121214] ${
+          className={`fixed mt-[82px]  z-50 w-full bg-[#121214] ${
             click === "Eventos" ? "flex" : "hidden"
-          } justify-center border-b border-[#29292e] items-center h-[277px]`}
+          } justify-center border-b border-[#29292e] items-center h-[277px] max-lg:h-full`}
         >
           <Events />
         </div>
