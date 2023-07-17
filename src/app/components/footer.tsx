@@ -38,7 +38,7 @@ export default function Footer() {
         {" "}
         <div className=" w-[70rem]  flex flex-col h-[31.25rem] ">
           <div>
-            <div className="h-[23.5rem] w-full py-20 flex flex-row  justify-between ">
+            <div className="h-[23.5rem] w-full py-20 flex flex-row  justify-between  ">
               <div className="h-full w-fit">
                 <div className="mb-[53px] ">
                   <Image

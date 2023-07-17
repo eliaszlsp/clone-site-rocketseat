@@ -7,11 +7,11 @@ import { useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-interface AnimatedInViewStyle {
+/* interface AnimatedInViewStyle {
   transform: string;
   opacity: number;
   transition: string;
-}
+} */
 
 const roboto = Roboto({
   weight: ["700", "400"],
@@ -418,13 +418,21 @@ export default function Main() {
           <div className="w-[1120px]  flex flex-col text-white justify-between h-[556px]  ">
             <div className="flex flex-row  items-center w-full justify-between  ">
               <div className="text-5xl font-bold leading-[58px] ">
-                <h3>
+                <h3
+                  data-aos="fade-up"
+                  className=" aos-init aos-animate
+ "
+                >
                   {" "}
                   Método desenhado para <br /> acelerar a sua evolução
                 </h3>
               </div>
-              <div className="relative min-h-full h-[96px]  before:bg-[#3c3c42] before:w-[50px] before:h-[1px] before:absolute before:top-0  before:content-['']">
-                <p className="text-base pt-6 leading-[26px] ">
+              <div className="relative min-h-full h-[96px]  aos-init aos-animate before:bg-[#3c3c42] before:w-[50px] before:h-[1px] before:absolute before:top-0  before:content-['']">
+                <p
+                  className="text-base pt-6 leading-[26px] "
+                  data-aos="fade-left"
+                  data-aos-delay="100"
+                >
                   {" "}
                   Combinamos 3 pilares para você conquistar experiência, <br />
                   dominar as ferramentas e saber se posicionar profissionalmente
@@ -432,8 +440,12 @@ export default function Main() {
               </div>
             </div>
             <div className=" grid grid-cols-3 gap-8   ">
-              <div className=" flex flex-col w-[352px]  relative border-[#29292e]  bg-[#121214] border pr-[52px]  pl-[24px] rounded-lg py-8  h-[378px] justify-evenly">
-                <div className="mb-4 h-[166px] flex justify-between flex-col ">
+              <div
+                data-aos-delay="100"
+                data-aos="fade-up"
+                className=" flex flex-col w-[352px]  relative aos-init aos-animate border-[#29292e]  bg-[#121214] border pr-[52px]  pl-[24px] rounded-lg py-8  h-[378px] justify-evenly"
+              >
+                <div className="mb-4 h-[166px] flex justify-between    flex-col ">
                   <div className="">
                     {" "}
                     <Image
@@ -464,8 +476,10 @@ export default function Main() {
               </div>
 
               <div
-                className=" flex flex-col w-[352px] relative  border-[#29292e] border bg-[#121214] rounded-lg py-8  pr-[52px]  pl-[24px]  h-[378px] justify-evenly
+                className=" flex flex-col w-[352px] relative  aos-init aos-animate border-[#29292e] border bg-[#121214] rounded-lg py-8  pr-[52px]  pl-[24px]  h-[378px] justify-evenly
                "
+                data-aos-delay="200"
+                data-aos="fade-up"
               >
                 <div className="mb-4 h-[166px] flex justify-between flex-col ">
                   <div className="">
@@ -495,7 +509,11 @@ export default function Main() {
                   />
                 </div>
               </div>
-              <div className=" flex flex-col w-[352px] relative  h-[378px]  bg-[#121214] border-[#29292e]  pr-[52px] pl-[24px]  border rounded-lg py-8  justify-evenly ">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="300"
+                className=" flex flex-col w-[352px] relative  aos-init aos-animate   h-[378px]  bg-[#121214] border-[#29292e]  aos-init aos-animate pr-[52px] pl-[24px]  border rounded-lg py-8  justify-evenly "
+              >
                 <div className="mb-4 h-[166px] flex justify-between flex-col">
                   <div>
                     <Image
@@ -524,13 +542,16 @@ export default function Main() {
         <section className="min-h-[1011px] flex items-center justify-center b border-b border-b-[#29292e]">
           <div className="w-[1120px] text-[#e1e1e6] h-[691px]  ">
             <div className="font-bold leading-[54px] text-5xl w-full ">
-              <h3>
+              <h3 data-aos="fade-up" className="aos-init aos-animate ">
                 Geramos resultado <br /> através do ensino de <br /> programação
               </h3>
             </div>
             <div className=" flex gap-20 w-full  ">
               <div className="mt-20 w-full">
-                <div className=" border-b pb-10 border-b-[#29292e] min-w-full flex justify-around flex-col">
+                <div
+                  data-aos-delay="100"
+                  className=" border-b pb-10  border-b-[#29292e] min-w-full flex justify-around flex-col"
+                >
                   <div>
                     <p className=" text-[16px]   leading-[26px]">
                       &quot;Fiz muitas conexões que me levaram a hoje me
@@ -561,7 +582,7 @@ export default function Main() {
                     </div>
                   </div>
                 </div>
-                <div>
+                <div data-aos-delay="150">
                   <p className=" text-[16px] pt-10  leading-[26px] ">
                     &quot;O apoio da comunidade, e a estrutura do curso foram
                     fundamentais <br /> para o meu crescimento e entender como
@@ -588,7 +609,7 @@ export default function Main() {
                   </div>
                 </div>
               </div>
-              <div className="w-full">
+              <div data-aos-delay="200" className="w-full">
                 <div className=" border-b border-b-[#29292e] pb-10 flex justify-around flex-col">
                   <p className=" text-[16px]   leading-[26px]">
                     &quot;Hoje faço trabalhos para clientes até fora do Brasil,
@@ -615,7 +636,7 @@ export default function Main() {
                     </div>
                   </div>
                 </div>
-                <div>
+                <div data-aos-delay="250">
                   <p className=" text-[16px] pt-10  leading-[26px]">
                     &quot;Aprendi muito e de maneira bem rápida, consegui um
                     novo emprego em <br /> uma empresa incrível e trabalho com o
@@ -648,12 +669,19 @@ export default function Main() {
         <section className=" bg-[#121214]  pt-40 pb-[100px] flex flex-col justify-center  border-b border-b-[#29292e]  items-center w-full h-[696px] ">
           <div className=" w-[1120px]   flex flex-col justify-center h-full  items-center ">
             <div className="flex flex-col text-[#e1e1e6] h-full text-center  w-full ">
-              <h3 className="mb-6 font-bold text-5xl leading-[54px]">
+              <h3
+                data-aos="fade-up"
+                className="mb-6 font-bold text-5xl aos-init aos-animate   leading-[54px]"
+              >
                 {" "}
                 Empresas que contratam <br />
                 nossos alunos
               </h3>
-              <p className=" leading-[26px]">
+              <p
+                data-aos="fade-in"
+                data-aos-delay="100"
+                className=" aos-init aos-animate leading-[26px]"
+              >
                 Existe um abismo entre profissionais de programação e o mercado.{" "}
                 <br />
                 Nosso propósito é construir uma ponte entre vocês através da
@@ -662,7 +690,11 @@ export default function Main() {
             </div>
             <div className="text-white w-full min-h-[171px] mt-20">
               <div className=" flex flex-wrap gap-x-10 gap-y-14 w-full h-full items-center  justify-center  ">
-                <div>
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  className="aos-init aos-animate"
+                >
                   <Image
                     src="/meta.webp"
                     width={114.01}
@@ -671,7 +703,11 @@ export default function Main() {
                   />
                 </div>
 
-                <div className="w-87 h-[35px]">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="250"
+                  className="w-87 h-[35px]  aos-init aos-animate     "
+                >
                   <Image
                     src="/ciet.png"
                     width={87}
@@ -679,7 +715,11 @@ export default function Main() {
                     alt="logo ciet"
                   />
                 </div>
-                <div>
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  className="aos-init aos-animate"
+                >
                   <Image
                     src="/totvs.webp"
                     width={150}
@@ -687,7 +727,11 @@ export default function Main() {
                     alt="Author"
                   />
                 </div>
-                <div>
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="350"
+                  className="aos-init aos-animate"
+                >
                   <Image
                     src="/accenture.webp"
                     width={162}
@@ -695,7 +739,11 @@ export default function Main() {
                     alt="Author"
                   />
                 </div>
-                <div>
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                  className="aos-init aos-animate"
+                >
                   <Image
                     src="/stone.webp"
                     width={120}
@@ -703,10 +751,18 @@ export default function Main() {
                     alt="Author"
                   />
                 </div>
-                <div>
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="450"
+                  className="aos-init aos-animate"
+                >
                   <Image src="/itau.png" width={57} height={57} alt="Author" />
                 </div>
-                <div>
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                  className="aos-init aos-animate"
+                >
                   <Image
                     src="/avanade.webp"
                     width={205}
@@ -714,7 +770,11 @@ export default function Main() {
                     alt="Author"
                   />
                 </div>
-                <div>
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="550"
+                  className="aos-init aos-animate"
+                >
                   <Image
                     src="/compasso.webp"
                     width={208}
@@ -723,7 +783,11 @@ export default function Main() {
                   />
                 </div>
 
-                <div>
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                  className="aos-init aos-animate"
+                >
                   <Image
                     src="/nttdata.webp"
                     width={148}
@@ -731,7 +795,11 @@ export default function Main() {
                     alt="Author"
                   />
                 </div>
-                <div>
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="650"
+                  className="aos-init aos-animate"
+                >
                   <Image
                     src="/invilla.webp"
                     width={148}
