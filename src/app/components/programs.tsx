@@ -28,8 +28,8 @@ export default function Programs() {
             {" "}
             Programas
           </h1>
-          <div className="  lg:p-4 lg:pb-4 lg:h-[102px] max-lg:w-[317px]    ">
-            <div className=" flex flex-row  justify-between  items-center w-full border-t border-[#202024] text-[#c4c4cc] text-sm   ">
+          <div className="  lg:px-4 pb-4  lg:h-[102px] max-lg:w-[317px]    ">
+            <div className=" flex flex-row  justify-between  items-center w-full lg:border-t border-[#202024] text-[#c4c4cc] text-sm   ">
               <div className=" flex gap-4 justify-center mt-4  w-full  flex-col">
                 <div>
                   <Image
@@ -55,9 +55,9 @@ export default function Programs() {
             </div>
           </div>
 
-          <div className=" lg:px-4 lg:pb-4 lg:h-[102px] max-lg:w-[317px]   ">
+          <div className=" lg:px-4 pb-4 lg:h-[102px] max-lg:w-[317px]   ">
             <div className=" flex flex-row  items-center justify-between gap-4 border-t border-[#202024]   text-[#c4c4cc] text-sm ">
-              <div className=" flex gap-4 mt-4  flex-col">
+              <div className=" flex gap-4 mt-4 max-lg:max-w-fit flex-col">
                 <div>
                   <Image
                     src="explorer.svg"
@@ -69,9 +69,10 @@ export default function Programs() {
                 </div>
 
                 <div>
-                  <p>
-                    Para você aprender programação do zero e conquistar sua
-                    primeira vaga.
+                  <p className="max-lg:leading-[21px]">
+                    Para você aprender programação do{" "}
+                    <br className="lg:hidden" /> zero e conquistar sua primeira
+                    vaga.
                   </p>
                 </div>
               </div>
@@ -88,7 +89,7 @@ export default function Programs() {
             </div>
           </div>
 
-          <div className=" lg:px-4 lg:pb-4 lg:h-[102px] max-lg:w-[317px]   ">
+          <div className=" lg:px-4 pb-4 lg:h-[102px] max-lg:w-[317px]   ">
             <div className=" flex-row flex justify-between items-center gap-4   text-[#c4c4cc] text-sm border-t border-[#202024]   ">
               <div className=" flex gap-4 flex-col mt-4 ">
                 <div>
@@ -119,9 +120,6 @@ export default function Programs() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="lg:hidden ">
-            <Events />
           </div>
         </div>
       </div>

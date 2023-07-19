@@ -32,7 +32,7 @@ export default function Footer() {
   return (
     <>
       <footer
-        className=" bg-[#121214] relative  after:h-[.0625rem] after:absolute after:bg-[#29292e] after:bottom-[112px]
+        className=" bg-[#121214] relative max-lg:hidden  after:h-[.0625rem] after:absolute after:bg-[#29292e] after:bottom-[112px]
        after:content-[''] after:w-full  flex flex-col justify-center  items-center  h-[30.5rem] "
       >
         {" "}

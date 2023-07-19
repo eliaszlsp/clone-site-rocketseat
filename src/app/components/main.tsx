@@ -56,7 +56,7 @@ export default function Main() {
 
   return (
     <div className={roboto.className}>
-      <main className=" flex justify-center  flex-col  ">
+      <main className=" flex justify-center max-lg:hidden flex-col  ">
         <section
           className={` ${roboto.className}  bg-[url('/bg.png')] bg-contain bg-[#121214]  bg-no-repeat items-center text-white mt-[83px]`}
         >

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Programs from "./programs";
 import Events from "./events";
 import { useState } from "react";
+import ResponsiveMenu from "./responsiveheader";
 const roboto = Roboto({
   weight: ["700", "400"],
   subsets: ["latin"],
@@ -13,7 +14,7 @@ export default function Header() {
   const [click, setClick] = useState("");
   const disableScroll = (hidden: boolean) => {
     if (hidden === true) {
-      document.body.classList.toggle("overflow-hidden");
+      document.body.classList.toggle("lg:overflow-hidden");
       document.body.classList.toggle("pr-[6px]");
     }
   };
@@ -27,10 +28,10 @@ export default function Header() {
       <div>
         <div
           className={`flex  fixed w-full  ${
-            click === "" ? "" : "pr-[.375rem]"
+            click === "" ? "" : "lg:pr-[.375rem]"
           }  z-10 h-[83px] border-b border-[#29292e] bg-[#121214] flex-col justify-center  items-center  min-w-max `}
         >
-          <header className="max-w-[1440px]  w-full flex flex-row  min-h-full  justify-between items-center   px-6 ">
+          <header className="max-w-[1440px]   w-full  max-lg:w-screen flex flex-row  min-h-full  justify-between items-center   lg:px-6 ">
             <div className="lg:hidden flex flex-row justify-between items-center max-w-[83.83px] w-full">
               <div>
                 <Image
@@ -139,11 +140,16 @@ export default function Header() {
           </header>
         </div>
         <div
-          className={` fixed  z-50 mt-[82px] w-full bg-[#121214] ${
+          className={` fixed  z-50 mt-[82px] max-lg:w-screen w-full bg-[#121214] ${
             click === "Programas" ? "flex" : "hidden"
-          } justify-center border-b border-[#29292e] items-center h-[387px] max-lg:h-full `}
+          } lg:justify-center border-b border-[#29292e] max-lg:p-[25px] max-lg:w-screen  lg:items-center h-[387px] max-lg:h-full `}
         >
-          <Programs />
+          <div className=" max-lg:hidden">
+            <Programs />
+          </div>
+          <div className="lg:hidden ">
+            <ResponsiveMenu />
+          </div>
         </div>
         <div
           className={`fixed mt-[82px]  z-50 w-full bg-[#121214] ${
